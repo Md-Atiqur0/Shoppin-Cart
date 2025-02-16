@@ -1,0 +1,248 @@
+body{
+    background-color: #efefef;
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    transition: 0.5s;
+    -webkit-transition: 0.5;
+    -moz-transition: 0.5;
+    -ms-transition: 0.5;
+    -o-transition: 0.5;
+}
+.container h1{
+    margin-left: 20px;
+    color: black;
+}
+.container header{
+    width: 100%;
+    position: fixed;
+    background-color: gray;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+}
+.container header .shopping{
+    position: relative;
+    text-align: right;
+}
+.shopping i{
+    padding-right: 20px;
+    padding-top: 10px;
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+.shopping i:hover{
+    color: orangered;
+}
+.shopping span{
+    margin-top: 10px;
+    background: orangered;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+.container .list{
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.card{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    background-color: #dadada;
+    border-left: 1px solid #560bad;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    z-index: 100;
+    transition: 0.5s;
+    overflow: auto;
+}
+.active .card{
+    right: 0;
+}
+.card h1{
+    color: #560bad;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.card .checkOut{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.card .checkOut div{
+    background-color: #560bad;
+    color: #fff;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1c1f25;
+    color: #fff;
+}
+.list .item{
+    text-align: center;
+    background-color: #fff;
+    padding: 2px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    cursor: pointer;
+}
+.list .item img{
+    width: 120px;
+    height: 250px;
+}
+.list .item .title{
+    height: 50px;
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 10px;
+}
+.list .item .docs{
+    height: 50px;
+    padding-bottom: 5px;
+    overflow: auto
+}
+.list .item button{
+    background-color: #efefef;
+    color: #560bad;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    border: 3px solid #560bad;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+.list .item button:hover{
+    background-color: #560bad;
+    color: #efefef;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns:100px repeat(3, 1fr);
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 50px;
+    height: 50px;
+}
+.listCard .count{
+    color: #1f1f1f;
+    margin: 0 10px;
+}
+.cardTitle,
+cardPrice{
+    color: black;
+}
+.cardButton{
+    width: 28px;
+    height: 28px;
+    color: #efefef;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .container .list{
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .container .list{
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
+.card .promo-code{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.card .promo-code div{
+    background-color: #560bad;
+    color: #fff;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    font-weight: bold;
+}
+.card .promo-code div:nth-child(2){
+    background-color: #1c1f25;
+    color: #fff;
+}
+.card .inter-promo{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+}
+.card .inter-promo label{
+    place-content: center;
+}
+.card .inter-promo button{
+    background-color: orangered;
+    color: #fff;
+}
